@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/todolistapp/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List App</title>
+    <script>
+      // Apply saved theme before React renders to avoid FOUC
+      (function() {
+        try {
+          const saved = localStorage.getItem('theme')
+          const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+          if (saved === 'dark' || (!saved && prefersDark)) {
+            document.documentElement.classList.add('dark')
+          } else {
+            document.documentElement.classList.remove('dark')
+          }
+        } catch (e) {
+          // Fallback: do nothing
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/todolistapp/assets/index-07wYdCJM.js"></script>
+    <link rel="stylesheet" crossorigin href="/todolistapp/assets/index-CV4Lk9h3.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
